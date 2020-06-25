@@ -23,7 +23,7 @@ router.post("/register", (req, res) => {
       if (!found) {
         User.create(UserData)
           .then((data) => {
-            res.json(data);
+            res.json({ status: data.email + "user registered" });
           })
           .catch((err) => {
             res.send(err);
